@@ -20,12 +20,17 @@ class Auth extends Component {
   };
   state = {};
 
+  componentDidMount = () => {
+    console.log('AUTH');
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <Image
           style={styles.logo}
           resizeMode="contain"
+          fadeDuration={300}
           source={logos.logoSione}
         />
         <View style={styles.inner}>
