@@ -1,1 +1,1 @@
-export { default as FancyTitle } from './FancyTitle';
+export { default as FancyTitle } from './FancyTitle'

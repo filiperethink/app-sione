@@ -2,27 +2,11 @@ import {
   createStackNavigator,
   createAppContainer,
   createSwitchNavigator,
-  createDrawerNavigator,
 } from 'react-navigation';
 
 // Modules
-import { HomeScreen } from '~/modules/Home';
-import { AuthScreen } from '~/modules/Auth';
+import AuthScreen from '~/modules/Auth/screens/AuthScreen';
 import Preload from '~/modules/Preload';
-
-const DraweNav = createDrawerNavigator({
-  Home: HomeScreen,
-});
-
-const AppStack = createStackNavigator(
-  {
-    Home: DraweNav,
-  },
-  {
-    header: null,
-    headerMode: 'none',
-  },
-);
 
 const PreloadStack = createStackNavigator(
   {
@@ -39,14 +23,13 @@ const PreloadStack = createStackNavigator(
 );
 
 const AuthStack = createStackNavigator({
-  SignIn: AuthScreen,
+  Signup: AuthScreen,
 });
 
 const Nav = createAppContainer(
   createSwitchNavigator(
     {
       Preload: PreloadStack,
-      App: AppStack,
       Auth: AuthStack,
     },
     {

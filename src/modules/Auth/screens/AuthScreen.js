@@ -1,42 +1,44 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Image } from 'react-native';
-import {
-  MainContainer,
-  Button,
-  InputField,
-  FancyTitle,
-  Block,
-} from '~/components';
+import { SafeAreaView, Image, View } from 'react-native';
+
+// Redux
+// import { connect } from 'react-redux';
+
+// Styles
+import { styles } from './AuthScreenStyle';
+
 import { Images } from '~/assets';
+import { FancyTitle } from '~/components/FancyTitle';
+import { FormSignup } from '../components';
 
 const { logos } = Images;
 
-class AuthScreen extends Component {
+class Auth extends Component {
   static navigationOptions = {
     header: null,
   };
-  componentDidMount = () => {
-    console.log('AuthScreen');
-  };
+  state = {};
 
   render() {
     return (
-      <MainContainer>
-        <Block>
-          <Image source={logos.logoSione} />
-        </Block>
-        <Block size={2}>
+      <SafeAreaView style={styles.container}>
+        <Image
+          style={styles.logo}
+          resizeMode="contain"
+          source={logos.logoSione}
+        />
+        <View style={styles.inner}>
           <FancyTitle title="CADASTRO" />
-          {/* <InputField onChangeText={() => {}} />
-          <Button text="CRIAR CONTA" onPress={() => {}} /> */}
-        </Block>
-      </MainContainer>
+          <FormSignup />
+        </View>
+      </SafeAreaView>
     );
   }
 }
 
-AuthScreen.propTypes = {};
+Auth.defaultProps = {};
 
-export default AuthScreen;
+Auth.propTypes = {};
+
+export default Auth;

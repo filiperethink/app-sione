@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Container, Title } from './styled';
+import PropTypes from 'prop-types';
+import { View, Text } from 'react-native';
 
-class HomeScreen extends Component {
-  static navigationOptions = {
-    header: null,
-  };
-  componentDidMount = () => {
-    console.log('HOME');
-  };
+// Redux
+import { connect } from 'react-redux';
+
+// Styles
+import { styles } from './HomeScreenStyle';
+
+class Home extends Component {
+  state = {};
 
   render() {
     return (
-      <Container>
-        <Title>HomeScreen</Title>
-      </Container>
+      <View>
+        <Text>Home</Text>
+      </View>
     );
   }
 }
 
-HomeScreen.propTypes = {};
+Home.defaultProps = { };
 
-const mapStateToProps = state => ({ state });
+Home.propTypes = { };
 
-export default connect(mapStateToProps)(HomeScreen);
+const mapStateToProps = state => ({});
+
+export default connect(
+  mapStateToProps,
+)(Home);
