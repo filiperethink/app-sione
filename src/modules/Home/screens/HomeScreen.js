@@ -7,6 +7,9 @@ class HomeScreen extends Component {
   static navigationOptions = {
     header: null,
   };
+  componentDidMount = () => {
+    console.log('HOME');
+  };
 
   render() {
     return (

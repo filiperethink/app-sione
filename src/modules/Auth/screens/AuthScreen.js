@@ -17,6 +17,9 @@ class AuthScreen extends Component {
   static navigationOptions = {
     header: null,
   };
+  componentDidMount = () => {
+    console.log('AuthScreen');
+  };
 
   render() {
     return (
@@ -26,8 +29,8 @@ class AuthScreen extends Component {
         </Block>
         <Block size={2}>
           <FancyTitle title="CADASTRO" />
-          <InputField onChangeText={() => {}} />
-          <Button text="CRIAR CONTA" onPress={() => {}} />
+          {/* <InputField onChangeText={() => {}} />
+          <Button text="CRIAR CONTA" onPress={() => {}} /> */}
         </Block>
       </MainContainer>
     );

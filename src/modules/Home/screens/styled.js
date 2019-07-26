@@ -3,8 +3,8 @@ import { View, Text } from 'react-native';
 
 export const Container = styled(View)`
   flex: 1;
-  justifyContent: center;
-  alignItems: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled(Text)`

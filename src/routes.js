@@ -33,7 +33,7 @@ const PreloadStack = createStackNavigator(
     headerMode: 'none',
     header: null,
     cardStyle: {
-      backgroundColor: '#857CBF',
+      backgroundColor: '#FFFFFF',
     },
   },
 );
