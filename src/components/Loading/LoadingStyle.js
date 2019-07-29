@@ -1,22 +1,18 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export const styles = EStyleSheet.create({
-  wrapper: {
-    flex: 1,
+  alignLoading: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '$COLORS.primaryDetails',
-    height: 40,
-    borderRadius: 8,
-    opacity: 1,
+    width: '100%',
+    height: '100%',
   },
-  text: {
-    fontSize: 12,
+
+  textLoading: {
+    marginTop: 15,
+    fontSize: 15,
     fontFamily: '$FONTS.secondaryBold',
-    color: '$COLORS.primaryBase',
+    color: '$COLORS.primaryDetails',
     letterSpacing: 5,
-  },
-  disabledStyle: {
-    opacity: 0.5,
   },
 });

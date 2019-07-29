@@ -12,7 +12,12 @@ export const styles = EStyleSheet.create({
   inner: {
     marginHorizontal: 20,
   },
-  onCreateStyle: {
-    backgroundColor: '$COLORS.primaryDarkFont',
+  successText: {
+    alignSelf: 'center',
+    fontSize: 13,
+    marginTop: 50,
+    fontFamily: '$FONTS.secondaryBold',
+    color: '$COLORS.primaryDetails',
+    letterSpacing: 5,
   },
 });

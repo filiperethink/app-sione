@@ -1,11 +1,7 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react';
-import { ActivityIndicator, View, StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-community/async-storage';
-// import Theme from '../../theme';
-
-//  = ['Warning: Async Storage'];
+import { Loading } from '~/components';
 
 class Preload extends Component {
   constructor(props) {
@@ -26,12 +22,7 @@ class Preload extends Component {
   };
 
   render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator color="#8BBE6C" size="large" />
-        <StatusBar barStyle="default" backgroundColor="#8BBE6C" />
-      </View>
-    );
+    return <Loading />;
   }
 }
 

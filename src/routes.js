@@ -7,6 +7,7 @@ import {
 // Modules
 import AuthScreen from '~/modules/Auth/screens/AuthScreen';
 import Preload from '~/modules/Preload';
+import UserScreen from './modules/User/screens/UserScreen';
 
 const PreloadStack = createStackNavigator(
   {
@@ -23,7 +24,11 @@ const PreloadStack = createStackNavigator(
 );
 
 const AuthStack = createStackNavigator({
-  Signup: AuthScreen,
+  Signin: AuthScreen,
+});
+
+const UserStack = createStackNavigator({
+  Signup: UserScreen,
 });
 
 const Nav = createAppContainer(
@@ -31,6 +36,7 @@ const Nav = createAppContainer(
     {
       Preload: PreloadStack,
       Auth: AuthStack,
+      User: UserStack,
     },
     {
       initialRouteName: 'Preload',

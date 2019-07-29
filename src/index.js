@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
+import { YellowBox } from 'react-native';
 import '~/config/ReactotronConfig';
 import { Provider } from 'react-redux';
 import store from '~/store/store';
 import Routes from '~/routes';
-import { SafeAreaView, View } from 'react-native';
 
 class App extends Component {
   componentDidMount() {
-    console.log('APP');
+    YellowBox.ignoreWarnings([
+      'Warning: componentWillMount is deprecated and will be removed',
+      'Encountered an error loading page',
+      'Warning: Async Storage',
+    ]);
   }
 
   render() {
-    const inlineStyle = {
-      height: 10,
-      backgroundColor: '#8BBE6C',
-      width: '100%',
-    };
     return (
       <Provider store={store}>
-        <SafeAreaView>
-          <View style={inlineStyle} />
-        </SafeAreaView>
         <Routes />
       </Provider>
     );

@@ -1,9 +1,16 @@
-import { createRequestFactory } from '../request';
+import { API } from './client';
 
-const api = createRequestFactory('/user');
+const create = async data => {
+  const newUser = {
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    password: data.password,
+  };
 
-const getUsers = async () => api.get();
+  return await API.post('/users', newUser);
+};
 
 export default {
-  getUsers
+  create,
 };
