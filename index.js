@@ -6,5 +6,7 @@ YellowBox.ignoreWarnings([
   'Encountered an error loading page',
   'Warning: Async Storage',
 ]);
+
+console.disableYellowBox = true;
 Theme.initTheme();
 AppRegistry.registerComponent(appName, () => App);

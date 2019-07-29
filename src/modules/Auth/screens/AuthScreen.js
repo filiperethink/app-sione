@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { SafeAreaView, Image, View } from 'react-native';
-
+import SvgUri from 'react-native-svg-uri';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 // Redux
 // import { connect } from 'react-redux';
 
@@ -27,16 +28,13 @@ class Auth extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Image
-          style={styles.logo}
-          resizeMode="contain"
-          fadeDuration={300}
-          source={logos.logoSione}
-        />
-        <View style={styles.inner}>
-          <FancyTitle title="CADASTRO" />
-          <FormSignup />
-        </View>
+        <KeyboardAwareScrollView>
+          <SvgUri style={styles.logo} source={logos.logoSvg} />
+          <View style={styles.inner}>
+            <FancyTitle title="CADASTRO" />
+            <FormSignup />
+          </View>
+        </KeyboardAwareScrollView>
       </SafeAreaView>
     );
   }

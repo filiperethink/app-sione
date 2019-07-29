@@ -2,7 +2,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 export const styles = EStyleSheet.create({
   wrapperForm: {
-    marginTop: 30,
+    marginTop: 50,
   },
   row: {
     flexDirection: 'row',

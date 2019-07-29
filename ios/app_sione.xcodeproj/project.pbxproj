@@ -19,7 +19,6 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* app_sioneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* app_sioneTests.m */; };
 		46DCFBFE3D46508F5546AC36 /* libPods-app_sione.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F930DAA5DCE3D443D5261440 /* libPods-app_sione.a */; };
-		4D13AA499BE2459AB9B83D45 /* timana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC51E88BED08471CBAAD1EE3 /* timana.ttf */; };
 		6A5D55F4E3F54D7991C63EA9 /* PTSans-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8BEDA279A4C4986DE081A /* PTSans-RegularItalic.ttf */; };
 		92E8A605AE3306D5E733329F /* libPods-app_sione-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D57FD848E7B627471EEAD34E /* libPods-app_sione-tvOS.a */; };
 		9AA2B6AC4A1143FAAD44B05B /* PTSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89A586E49F774219B7A97F6D /* PTSans-Regular.ttf */; };
@@ -71,7 +70,6 @@
 		AB77BC0B07600608927D5ED6 /* libPods-app_sioneTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app_sioneTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDD8F4E50A28A270280373D /* Pods-app_sione-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_sione-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-app_sione-tvOSTests/Pods-app_sione-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC962A79C749428C90802565 /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PTSans-BoldItalic.ttf"; path = "../src/assets/fonts/PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		CC51E88BED08471CBAAD1EE3 /* timana.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = timana.ttf; path = ../src/assets/fonts/timana.ttf; sourceTree = "<group>"; };
 		D57FD848E7B627471EEAD34E /* libPods-app_sione-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app_sione-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -215,7 +213,6 @@
 				BC962A79C749428C90802565 /* PTSans-BoldItalic.ttf */,
 				89A586E49F774219B7A97F6D /* PTSans-Regular.ttf */,
 				3CF8BEDA279A4C4986DE081A /* PTSans-RegularItalic.ttf */,
-				CC51E88BED08471CBAAD1EE3 /* timana.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -364,7 +361,6 @@
 				C8AEE1C9072F4A70AF8FE6A5 /* PTSans-BoldItalic.ttf in Resources */,
 				9AA2B6AC4A1143FAAD44B05B /* PTSans-Regular.ttf in Resources */,
 				6A5D55F4E3F54D7991C63EA9 /* PTSans-RegularItalic.ttf in Resources */,
-				4D13AA499BE2459AB9B83D45 /* timana.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

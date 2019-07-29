@@ -8,7 +8,8 @@ const images = {
     icnPassShow: require('./icons/icnPassShow.png'),
   },
   logos: {
-    logoSione: require('./logos/logoSione.png'),
+    logoSione: require('./logos/LOGO.png'),
+    logoSvg: require('./logos/LOGO.svg'),
   },
   others: {},
 };
