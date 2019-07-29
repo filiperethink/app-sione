@@ -20,4 +20,11 @@ export const styles = EStyleSheet.create({
     color: '$COLORS.primaryDetails',
     letterSpacing: 5,
   },
+  haveAccount: {
+    fontSize: 10,
+    alignSelf: 'center',
+    fontFamily: '$FONTS.secondaryRegular',
+    color: '$COLORS.primaryDarkFont',
+    textDecorationLine: 'underline',
+  },
 });

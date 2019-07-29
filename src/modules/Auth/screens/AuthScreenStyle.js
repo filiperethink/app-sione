@@ -15,4 +15,11 @@ export const styles = EStyleSheet.create({
   onCreateStyle: {
     backgroundColor: '$COLORS.primaryDarkFont',
   },
+  haveAccount: {
+    fontSize: 10,
+    alignSelf: 'center',
+    fontFamily: '$FONTS.secondaryRegular',
+    color: '$COLORS.primaryDarkFont',
+    textDecorationLine: 'underline',
+  },
 });

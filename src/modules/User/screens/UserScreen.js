@@ -33,6 +33,17 @@ class User extends Component {
     const { handleCreateUser } = this.props;
     await handleCreateUser(data);
   };
+
+  renderSuccess = () => (
+    <Fragment>
+      <Text style={styles.successText}>CADASTRADO COM SUCESSO!</Text>
+      <ButtonSubmit
+        text="IR PARA LOGIN"
+        onPress={this.goToLogin}
+        customStyle={{ marginTop: 50 }}
+      />
+    </Fragment>
+  );
   render() {
     const { isCreating, isCreated } = this.props;
     return (
@@ -43,21 +54,15 @@ class User extends Component {
           <KeyboardAwareScrollView>
             <SvgUri style={styles.logo} source={logos.logoSvg} />
             <View style={styles.inner}>
-              {!isCreated ? (
-                <Fragment>
-                  <Text style={styles.successText}>
-                    CADASTRADO COM SUCESSO!
-                  </Text>
-                  <ButtonSubmit
-                    text="IR PARA LOGIN"
-                    onPress={this.goToLogin}
-                    customStyle={{ marginTop: 50 }}
-                  />
-                </Fragment>
+              {isCreated ? (
+                this.renderSuccess()
               ) : (
                 <Fragment>
                   <FancyTitle title="CADASTRO" />
                   <FormSignup handleSubmitForm={this.handleSubmitForm} />
+                  <Text style={styles.haveAccount} onPress={this.goToLogin}>
+                    Já tenho conta.
+                  </Text>
                 </Fragment>
               )}
             </View>

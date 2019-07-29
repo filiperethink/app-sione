@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, View, Text } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -40,11 +40,9 @@ class Auth extends Component {
           <View style={styles.inner}>
             <FancyTitle title="ACESSAR" />
             <FormSignup handleSubmitForm={this.handleSubmitForm} />
-            <ButtonSubmit
-              text="CRIAR NOVA CONTA"
-              onPress={this.goToCreateUser}
-              customStyle={styles.onCreateStyle}
-            />
+            <Text style={styles.haveAccount} onPress={this.goToCreateUser}>
+              Criar minha conta.
+            </Text>
           </View>
         </KeyboardAwareScrollView>
       </SafeAreaView>
