@@ -1,14 +1,15 @@
-/* eslint-disable object-curly-newline */
-import { createRequestFactory } from '../request';
+import { API } from './client';
 
-const api = createRequestFactory('/users');
+const create = async data => {
+  const newUser = {
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    password: data.password,
+  };
 
-const create = async data =>
-  api.post(
-    '/',
-    { ...data },
-    { 'Content-Type': 'application/x-www-form-urlencoded' },
-  );
+  return await API.post('/users', newUser);
+};
 
 export default {
   create,

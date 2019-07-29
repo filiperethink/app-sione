@@ -1,5 +1,9 @@
 export default {
   locale: {},
+  user: {
+    isCreated: false,
+    isCreating: false,
+  },
   auth: {
     isLoading: false,
     isAuthenticated: false,

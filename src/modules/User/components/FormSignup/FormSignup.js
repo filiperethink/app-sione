@@ -24,6 +24,30 @@ class FormSignup extends Component {
       <View style={styles.wrapperForm}>
         <View style={styles.row}>
           <MainInput
+            label="NOME"
+            autoCapitalize
+            error={touched.firstName && errors.firstName}
+            onChangeText={handleChange('firstName')}
+            onBlur={() => setFieldTouched('firstName')}
+            errorText={
+              touched.firstName && errors.firstName && errors.firstName
+            }
+            name="firstName"
+          />
+        </View>
+        <View style={styles.row}>
+          <MainInput
+            label="SOBRENOME"
+            autoCapitalize
+            error={touched.lastName && errors.lastName}
+            onChangeText={handleChange('lastName')}
+            onBlur={() => setFieldTouched('lastName')}
+            errorText={touched.lastName && errors.lastName && errors.lastName}
+            name="lastName"
+          />
+        </View>
+        <View style={styles.row}>
+          <MainInput
             label="EMAIL"
             keyboard="email-address"
             error={touched.email && errors.email}
@@ -45,10 +69,25 @@ class FormSignup extends Component {
           />
         </View>
         <View style={styles.row}>
+          <MainInput
+            label="CONFIRME SUA SENHA"
+            secureText
+            error={touched.passwordConfirmation && errors.passwordConfirmation}
+            onChangeText={handleChange('passwordConfirmation')}
+            onBlur={() => setFieldTouched('passwordConfirmation')}
+            errorText={
+              touched.passwordConfirmation &&
+              errors.passwordConfirmation &&
+              errors.passwordConfirmation
+            }
+            name="passwordConfirmation"
+          />
+        </View>
+        <View style={styles.row}>
           <ButtonSubmit
             disabled={!isValid}
             onPress={handleSubmit}
-            text="ACESSAR AGORA"
+            text="CRIAR CONTA"
           />
         </View>
       </View>
@@ -58,6 +97,16 @@ class FormSignup extends Component {
   render() {
     const { handleSubmitForm } = this.props;
     const validationAdress = yup.object().shape({
+      firstName: yup
+        .string()
+        .min(3, 'Ao menos 3 Letras')
+        .max(15, 'No máximo 15 Letras')
+        .required('Nome é Obrigatório.'),
+      lastName: yup
+        .string()
+        .min(3, 'Ao menos 3 Letras')
+        .max(15, 'No máximo 15 Letras')
+        .required('Sobrenome é Obrigatório.'),
       email: yup
         .string()
         .email('Insira um email válido.')
@@ -70,13 +119,19 @@ class FormSignup extends Component {
         )
         .min(6, 'Minimo 6 caracteres')
         .required('Password é Obrigatório'),
+      passwordConfirmation: yup
+        .string()
+        .oneOf([yup.ref('password'), null], 'Password precisa ser idênticos.'),
     });
     return (
       <Fragment>
         <Formik
           initialValues={{
+            firstName: '',
+            lastName: '',
             email: '',
             password: '',
+            passwordConfirmation: '',
           }}
           onSubmit={handleSubmitForm}
           validationSchema={validationAdress}
@@ -89,8 +144,6 @@ class FormSignup extends Component {
 
 FormSignup.defaultProps = {};
 
-FormSignup.propTypes = {
-  handleSubmitForm: PropTypes.func.isRequired,
-};
+FormSignup.propTypes = {};
 
 export default FormSignup;
