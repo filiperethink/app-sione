@@ -20,6 +20,7 @@ export const $FONTS = {
 
 export const $SIZES = {
   fonts: {
+    xSmall: 8,
     small: 10,
     medium: 12,
     regular: 13,

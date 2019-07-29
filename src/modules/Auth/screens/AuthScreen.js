@@ -25,6 +25,9 @@ class Auth extends Component {
     console.log('AUTH');
   };
 
+  handleSubmitForm = values => {
+    console.log({ values });
+  };
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -32,7 +35,7 @@ class Auth extends Component {
           <SvgUri style={styles.logo} source={logos.logoSvg} />
           <View style={styles.inner}>
             <FancyTitle title="CADASTRO" />
-            <FormSignup />
+            <FormSignup handleSubmitForm={this.handleSubmitForm} />
           </View>
         </KeyboardAwareScrollView>
       </SafeAreaView>

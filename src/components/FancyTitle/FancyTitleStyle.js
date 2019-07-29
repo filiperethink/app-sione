@@ -1,9 +1,7 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 export const styles = EStyleSheet.create({
-  wrapper: {
-    marginTop: 45,
-  },
+  wrapper: {},
   title: {
     fontSize: 20,
     fontFamily: '$FONTS.secondaryBold',
