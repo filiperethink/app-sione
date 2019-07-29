@@ -1,49 +1,56 @@
 import axios from 'axios';
+import qs from 'qs';
+import { commonResponse } from '~/util';
 
-const baseURL = 'https://localhost:3000/api';
+const baseURL = 'http://localhost:3001/api';
 
 const Client = axios.create({ baseURL });
 
 export const setAuthToken = token => {
-  Client.defaults.headers.Authorization = token;
-};
-
-const commonResponse = (err, res) => {
-  if (err) {
-    return { success: false, error: err, data: null };
-  }
-  return { success: true, error: null, data: res.data };
+  Client.defaults.headers.Authorization = `Bearer ${token}`;
 };
 
 export const createRequestFactory = servicePath => {
-  const request = (method, path, obj) => new Promise(resolve => {
-    const options = {
-      method,
-      headers: {},
-    };
-    if (obj) {
-      options.headers.Accept = 'application/json';
-      options.headers['Content-Type'] = 'application/json';
-      options.data = obj;
-    }
-    options.url = servicePath + path;
+  const request = (method, path, obj, customHeaders) =>
+    new Promise(resolve => {
+      const options = {
+        method,
+        headers: {},
+      };
+      if (obj && customHeaders && !customHeaders['Content-Type']) {
+        options.headers.Accept = 'application/json';
+        options.headers['Content-Type'] = 'application/json';
+        options.data = obj;
+      }
+      if (customHeaders) {
+        options.headers = { ...options.headers, ...customHeaders };
+      }
+      if (
+        customHeaders &&
+        customHeaders['Content-Type'] === 'application/x-www-form-urlencoded'
+      ) {
+        options.data = qs.stringify(obj);
+      }
 
-    Client.request(options)
-      .then(response => {
-        resolve(commonResponse(null, response));
-      })
-      .catch(error => {
-        resolve(commonResponse(error));
-      });
-  });
+      options.url = servicePath + path;
 
-  const get = (path = '', obj) => request('GET', path, obj);
+      Client.request(options)
+        .then(response => {
+          resolve(commonResponse(null, response));
+        })
+        .catch(error => {
+          resolve(commonResponse(null, error.response.data));
+        });
+    });
 
-  const post = (path = '', obj) => request('POST', path, obj);
+  const get = (path = '', obj, headers) => request('GET', path, obj, headers);
 
-  const put = (path = '', obj) => request('PUT', path, obj);
+  const post = (path = '', obj, headers) => request('POST', path, obj, headers);
 
-  const deleteMethod = (path = '', obj) => request('DELETE', path, obj);
+  const put = (path = '', obj, headers) => request('PUT', path, obj, headers);
+
+  const deleteMethod = (path = '', obj, headers) =>
+    request('DELETE', path, obj, headers);
 
   return {
     get,

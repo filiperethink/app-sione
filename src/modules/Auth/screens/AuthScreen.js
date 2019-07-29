@@ -12,6 +12,7 @@ import { styles } from './AuthScreenStyle';
 import { Images } from '~/assets';
 import { FancyTitle } from '~/components/FancyTitle';
 import { FormSignup } from '../components';
+import { userService } from '~/services';
 
 const { logos } = Images;
 
@@ -25,8 +26,9 @@ class Auth extends Component {
     console.log('AUTH');
   };
 
-  handleSubmitForm = values => {
-    console.log({ values });
+  handleSubmitForm = async values => {
+    const user = await userService.create(values);
+    console.log({ user });
   };
   render() {
     return (

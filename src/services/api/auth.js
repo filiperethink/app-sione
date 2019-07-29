@@ -1,15 +1,15 @@
 /* eslint-disable object-curly-newline */
 import { createRequestFactory } from '../request';
 
-const api = createRequestFactory('/users');
+const api = createRequestFactory('/auth');
 
-const create = async data =>
+const authenticate = async data =>
   api.post(
-    '/',
+    '/signup',
     { ...data },
     { 'Content-Type': 'application/x-www-form-urlencoded' },
   );
 
 export default {
-  create,
+  authenticate,
 };
