@@ -11,6 +11,16 @@ export const styles = EStyleSheet.create({
     marginRight: 10,
     position: 'relative',
   },
+  wrapperInputError: {
+    height: 40,
+    borderColor: '$COLORS.primaryError',
+    paddingHorizontal: 5,
+    borderWidth: EStyleSheet.hairlineWidth,
+    borderRadius: 5,
+    flex: 1,
+    marginRight: 10,
+    position: 'relative',
+  },
   labelInput: {
     position: 'absolute',
     top: -6,
@@ -18,6 +28,16 @@ export const styles = EStyleSheet.create({
     paddingRight: 10,
     backgroundColor: '$COLORS.primaryBase',
     left: 10,
+    fontSize: '$SIZES.fonts.small',
+  },
+  labelInputError: {
+    position: 'absolute',
+    top: -6,
+    paddingLeft: 10,
+    paddingRight: 10,
+    backgroundColor: '$COLORS.primaryBase',
+    left: 10,
+    color: '$COLORS.primaryError',
     fontSize: '$SIZES.fonts.small',
   },
   inputField: {

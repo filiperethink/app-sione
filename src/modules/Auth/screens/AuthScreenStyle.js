@@ -6,8 +6,7 @@ export const styles = EStyleSheet.create({
     backgroundColor: '$COLORS.primaryBase',
   },
   logo: {
-    marginTop: 60,
-    marginBottom: 20,
+    marginVertical: 60,
     alignSelf: 'center',
   },
   inner: {

@@ -9,9 +9,14 @@ class ButtonSubmit extends PureComponent {
   state = {};
 
   render() {
-    const { text } = this.props;
+    const { text, disabled, onPress } = this.props;
     return (
-      <TouchableOpacity activeOpacity={0.7} style={styles.wrapper}>
+      <TouchableOpacity
+        disabled={disabled}
+        activeOpacity={0.7}
+        onPress={onPress}
+        style={[styles.wrapper, { opacity: !disabled ? 1 : 0.5 }]}
+      >
         <Text style={styles.text}>{text}</Text>
       </TouchableOpacity>
     );
@@ -22,6 +27,8 @@ ButtonSubmit.defaultProps = {};
 
 ButtonSubmit.propTypes = {
   text: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 export default ButtonSubmit;
